@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+}
+#form{
+    margin-top: 100px;
+    width: 500px;
+    height: 300px;
+    background-color: lightcoral;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px 2px red;
+}
+.button{
+    width: 140px;
+    height: 30px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms;
+    margin-top: 20px;
+    
+}
+.button:hover{
+    background-color: skyblue;
+    border: 1px dotted black;
+}
+#chooseCurrency{
+    background-color: lightblue;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: darkcyan;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button-text{
+    font-size: 20px;
+    color: dimgray;
+}
+#outer{
+    font-size: 30px;
+    color: black;
+    text-transform: uppercase;
+}
