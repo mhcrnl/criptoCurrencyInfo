@@ -1,5 +1,5 @@
-window.onload = function(){
-
+document.addEventListener('DOMContentLoaded', function(){
+    
     var currencyObj = {
         xhr: null,
         currency: null,
@@ -22,7 +22,8 @@ window.onload = function(){
                 this.currency.innerHTML += '<option value = "' + this.jsonObj[i].rank + '">' + this.jsonObj[i].name + ' (' + this.jsonObj[i].symbol + ') ' + '</option>';
                 
             }
-            currencyObj.submitObj();
+            currencyObj.jsonWriting();
+            currencyObj.changeVal();
         },
         jsonWriting: function(){
             var outer = document.getElementById('outer');
@@ -33,20 +34,18 @@ window.onload = function(){
             }
             else {
                 
-              outer.innerHTML = this.jsonObj[this.currency.value - 1].price_usd + ' $';
-            }
+              outer.innerHTML = this.jsonObj[this.currency.value - 1].price_usd + ' $';            }
         },
-        submitObj: function(){
-
-            var form = document.getElementById('form');
+        changeVal: function(){
             
-            form.addEventListener('submit', function(e){
-            e.preventDefault();
-
-            currencyObj.jsonWriting();
-        });
+            this.currency.onchange =  function(){
+                currencyObj.jsonWriting();
+            }
         }
     }
     currencyObj.init();
-}
+});
+
+    
+
 
